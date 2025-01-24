@@ -1,2 +1,12 @@
-<p>Now I can render any React component on any DOM node I want using ReactDOM.render</p>
+import Markdown from './components/markdown.jsx';
 
+
+function App() {
+  return (
+    <>
+      <Markdown />
+    </>
+  )
+}
+
+export default App;
