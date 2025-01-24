@@ -1,5 +1,6 @@
 import style from './markdown.module.css';
 import {useState , useEffect} from 'react';
+import {marked} from 'marked';
 
 const Markdown = () => {
     const [preview,setPreview] = useState();
@@ -13,7 +14,7 @@ const Markdown = () => {
     }, []);
 
     useEffect(() => {
-        setPreview(markdown);
+        setPreview(marked(markdown));
     }, [markdown]);
 
      return (
@@ -24,10 +25,16 @@ const Markdown = () => {
         className={style.textarea}
     />
     <div className={style.preview}>
-        { isLoading ? <div className={style.loading}>Loading...</div> : preview }
+        { isLoading ? <div className={style.loading}>Loading...</div> : (
+        
+                    <div dangerouslySetInnerHTML={{ __html: preview }} />
+                ) }
     </div>
 </div>
 );
 }
 
 export default Markdown;
+
+
+
