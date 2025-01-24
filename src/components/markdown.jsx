@@ -1,4 +1,4 @@
-import style from './markdown.module.css';
+import style from './styles/markdown.module.css';
 import {useState , useEffect} from 'react';
 
 const Markdown = () => {
