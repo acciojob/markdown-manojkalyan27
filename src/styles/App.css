@@ -1,1 +1,11 @@
 
+.app{
+    display: flex;
+    height: 100vh;
+    
+}
+
+.textarea{
+    width: 50%;
+    background-color: #EFF1F5;
+}   
